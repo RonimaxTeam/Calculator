@@ -17,10 +17,14 @@ namespace Calculator
         string input1;
         string input2;
         int status;
+        int statusInput = 1;
+        int statusOperator;
         public enum Status
         {
             Mult = 1,
             Div = 2,
+            Sum = 3,
+            Sub = 4
         }
 
        
@@ -37,6 +41,7 @@ namespace Calculator
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            statusOperator = 0;
             AddNumberToTextBox(1);
         }
 
@@ -98,7 +103,9 @@ namespace Calculator
 
         private void buttonMult_Click(object sender, EventArgs e)
         {
+            statusOperator = 1;
             textBoxInputAndResult.Text = String.Empty;
+            statusInput = 2;
             status = (int)Status.Mult;
         }
         
@@ -108,17 +115,19 @@ namespace Calculator
         }
         #endregion
 
-        public void AddNumberToTextBox(int i)
+        #region Methods
+        public void AddNumberToTextBox(int j)
         {
-            if (textBoxInputAndResult.Text != String.Empty)
+            if(statusInput == 1)
             {
-                input1 = input1 += objectNumberClass.Numbern(i).ToString().Trim();
+                
+                input1 = input1 += objectNumberClass.Numbern(j).ToString().Trim();
                 textBoxInputAndResult.Text = input1;
             }
             else
             {
-                textBoxInputAndResult.Text = String.Empty;
-                input2 = input2 += objectNumberClass.Numbern(i).ToString().Trim();
+                
+                input2 = input2 += objectNumberClass.Numbern(j).ToString().Trim();
                 textBoxInputAndResult.Text = input2;
             }
         }
@@ -129,22 +138,74 @@ namespace Calculator
                 decimal result = ObjectOperatorsClass.Mult(Convert.ToDecimal(input1), Convert.ToDecimal(input2));
                 textBoxInputAndResult.Text = result.ToString();
                 status = 0;
-                input1 = String.Empty;
-                input2 = String.Empty;
+                statusInput = 1;
             }
             else if (a == 2)
             {
                 decimal result = ObjectOperatorsClass.Div(Convert.ToDecimal(input1), Convert.ToDecimal(input2));
                 textBoxInputAndResult.Text = result.ToString();
                 status = 0;
-                input1 = String.Empty;
-                input2 = String.Empty;
+                
+                
+                    input1 = String.Empty;
+                    input2 = String.Empty;
+                    statusInput = 1;
+               
+                
+            }
+            else if (a == 3)
+            {
+                decimal result = ObjectOperatorsClass.Summation(Convert.ToDecimal(input1), Convert.ToDecimal(input2));
+                textBoxInputAndResult.Text = result.ToString();
+                status = 0;
+                statusInput = 1;
+            }
+            else if (a == 4)
+            {
+                decimal result = ObjectOperatorsClass.Subtraction(Convert.ToDecimal(input1), Convert.ToDecimal(input2));
+                textBoxInputAndResult.Text = result.ToString();
+                status = 0;
+                statusInput = 1;
             }
         }
 
+        #endregion
         private void buttonBack_Click(object sender, EventArgs e)
         {
 
+            if (textBoxInputAndResult.Text != String.Empty && statusInput == 1)
+            {
+                textBoxInputAndResult.Text = input1.Substring(0, input1.Length - 1);
+            }
+
+            //int lenght = textBoxInputAndResult.Text.Length - 1;
+            //string text = textBoxInputAndResult.Text;
+            //textBoxInputAndResult.Clear();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    te
+            //}
+        }
+
+        private void buttonSum_Click(object sender, EventArgs e)
+        {
+            textBoxInputAndResult.Text = String.Empty;
+            status = (int)Status.Sum;
+        }
+
+        private void buttonSub_Click(object sender, EventArgs e)
+        {
+            textBoxInputAndResult.Text = String.Empty;
+            status = (int)Status.Sub;
+        }
+
+        private void buttonPoint_Click(object sender, EventArgs e)
+        {
+            if (true)
+            {
+
+            }
         }
     }
 }

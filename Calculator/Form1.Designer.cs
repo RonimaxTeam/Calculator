@@ -190,6 +190,7 @@ namespace Calculator
             this.buttonSum.TabIndex = 13;
             this.buttonSum.Text = "+";
             this.buttonSum.UseVisualStyleBackColor = true;
+            this.buttonSum.Click += new System.EventHandler(this.buttonSum_Click);
             // 
             // buttonSub
             // 
@@ -199,6 +200,7 @@ namespace Calculator
             this.buttonSub.TabIndex = 14;
             this.buttonSub.Text = "-";
             this.buttonSub.UseVisualStyleBackColor = true;
+            this.buttonSub.Click += new System.EventHandler(this.buttonSub_Click);
             // 
             // buttonMult
             // 
@@ -237,6 +239,7 @@ namespace Calculator
             this.buttonPoint.TabIndex = 18;
             this.buttonPoint.Text = ".";
             this.buttonPoint.UseVisualStyleBackColor = true;
+            this.buttonPoint.Click += new System.EventHandler(this.buttonPoint_Click);
             // 
             // Form1
             // 
