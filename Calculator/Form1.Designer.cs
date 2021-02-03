@@ -60,6 +60,7 @@ namespace Calculator
             this.buttonBack.TabIndex = 0;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // button7
             // 
