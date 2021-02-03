@@ -8,9 +8,11 @@ namespace Calculator
 {
     public partial class Number
     {
-        public int Number1()
+        public int Numbern(int i)
         {
-            return 1;
+            return i;
         }
+        
+
     }
 }

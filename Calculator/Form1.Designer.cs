@@ -29,6 +29,7 @@ namespace Calculator
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonBack = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@ namespace Calculator
             this.buttonEqual = new System.Windows.Forms.Button();
             this.textBoxInputAndResult = new System.Windows.Forms.TextBox();
             this.buttonPoint = new System.Windows.Forms.Button();
+            this.timerSecondNunber = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // buttonBack
@@ -67,6 +69,7 @@ namespace Calculator
             this.button7.TabIndex = 1;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -76,6 +79,7 @@ namespace Calculator
             this.button4.TabIndex = 2;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -95,6 +99,7 @@ namespace Calculator
             this.button6.TabIndex = 4;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button0
             // 
@@ -104,6 +109,7 @@ namespace Calculator
             this.button0.TabIndex = 5;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // buttonCE
             // 
@@ -113,6 +119,7 @@ namespace Calculator
             this.buttonCE.TabIndex = 6;
             this.buttonCE.Text = "CE";
             this.buttonCE.UseVisualStyleBackColor = true;
+            this.buttonCE.Click += new System.EventHandler(this.buttonCE_Click);
             // 
             // button8
             // 
@@ -122,6 +129,7 @@ namespace Calculator
             this.button8.TabIndex = 7;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -131,6 +139,7 @@ namespace Calculator
             this.button9.TabIndex = 8;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button5
             // 
@@ -140,6 +149,7 @@ namespace Calculator
             this.button5.TabIndex = 9;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
@@ -149,6 +159,7 @@ namespace Calculator
             this.button2.TabIndex = 10;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -158,6 +169,7 @@ namespace Calculator
             this.button3.TabIndex = 11;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonDiv
             // 
@@ -167,6 +179,7 @@ namespace Calculator
             this.buttonDiv.TabIndex = 12;
             this.buttonDiv.Text = "/";
             this.buttonDiv.UseVisualStyleBackColor = true;
+            this.buttonDiv.Click += new System.EventHandler(this.buttonDiv_Click);
             // 
             // buttonSum
             // 
@@ -194,6 +207,7 @@ namespace Calculator
             this.buttonMult.TabIndex = 15;
             this.buttonMult.Text = "*";
             this.buttonMult.UseVisualStyleBackColor = true;
+            this.buttonMult.Click += new System.EventHandler(this.buttonMult_Click);
             // 
             // buttonEqual
             // 
@@ -203,6 +217,7 @@ namespace Calculator
             this.buttonEqual.TabIndex = 16;
             this.buttonEqual.Text = "=";
             this.buttonEqual.UseVisualStyleBackColor = true;
+            this.buttonEqual.Click += new System.EventHandler(this.buttonEqual_Click);
             // 
             // textBoxInputAndResult
             // 
@@ -274,6 +289,7 @@ namespace Calculator
         private System.Windows.Forms.Button buttonEqual;
         private System.Windows.Forms.TextBox textBoxInputAndResult;
         private System.Windows.Forms.Button buttonPoint;
+        private System.Windows.Forms.Timer timerSecondNunber;
     }
 }
 

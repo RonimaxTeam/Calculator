@@ -54,8 +54,7 @@
     </Compile>
     <Compile Include="Operators2.cs" />
     <Compile Include="Operators1.cs" />
-    <Compile Include="NumberFiveToNine.cs" />
-    <Compile Include="NumberZeroToFour.cs" />
+    <Compile Include="Number.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
